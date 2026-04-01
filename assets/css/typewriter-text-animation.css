@@ -3,7 +3,7 @@
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 18px;
+    font-size: 1rem;
     color: #7d2ae8;
 }
 
@@ -40,7 +40,7 @@
     38.0% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិច!"; }
 
     /* --- PAUSE PHASE (Full text visible) --- */
-    38.0%, 57.0% { content: "ចុចដើម្បបើកធៀបអេឡិចត្រូនិច!"; }
+    38.0%, 57.0% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិច!"; }
 
     /* --- DELETING PHASE (57% to 95%) --- */
     58.3% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិច"; }
