@@ -99,7 +99,7 @@ body {
 }
 
 .icon-kt-container {
-    height: 250px;
+    height: 222px;
 }
 
 .icon-kt-container img {
@@ -115,12 +115,12 @@ body {
 
 .engagement-title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 24px;
     color: #7d2ae8;
 }
 
 .open-btn {
-    margin-top: 6.5rem;
+    margin-top: 2.5rem;
     font-size: 20px;
     display: flex;
     align-items: center;
