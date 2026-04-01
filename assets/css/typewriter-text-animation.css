@@ -1,0 +1,104 @@
+.typewriter-container {
+    margin: 1rem 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+    color: #7d2ae8;
+}
+
+@keyframes typing {
+    /* --- TYPING PHASE (0% to 38%) --- */
+    0.0%  { content: ""; }
+    1.3%  { content: "ច"; }
+    2.6%  { content: "ចុ"; }
+    3.9%  { content: "ចុច"; }
+    5.2%  { content: "ចុចដ"; }
+    6.5%  { content: "ចុចដើ"; }
+    7.8%  { content: "ចុចដើម"; }
+    9.1%  { content: "ចុចដើម្"; }
+    10.4% { content: "ចុចដើម្ប"; }
+    11.7% { content: "ចុចដើម្បី"; }
+    13.0% { content: "ចុចដើម្បីប"; }
+    14.3% { content: "ចុចដើម្បីបើ"; }
+    15.6% { content: "ចុចដើម្បីបើក"; }
+    16.9% { content: "ចុចដើម្បីបើកធ"; }
+    18.2% { content: "ចុចដើម្បីបើកធៀ"; }
+    19.5% { content: "ចុចដើម្បីបើកធៀប"; }
+    20.8% { content: "ចុចដើម្បីបើកធៀបអ"; }
+    22.1% { content: "ចុចដើម្បីបើកធៀបអេ"; }
+    23.4% { content: "ចុចដើម្បីបើកធៀបអេឡ"; }
+    24.7% { content: "ចុចដើម្បីបើកធៀបអេឡិ"; }
+    26.0% { content: "ចុចដើម្បីបើកធៀបអេឡិច"; }
+    27.3% { content: "ចុចដើម្បីបើកធៀបអេឡិចត"; }
+    28.6% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្"; }
+    29.9% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រ"; }
+    31.2% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូ"; }
+    32.5% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូន"; }
+    33.8% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិ"; }
+    35.1% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិច"; }
+    38.0% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិច!"; }
+
+    /* --- PAUSE PHASE (Full text visible) --- */
+    38.0%, 57.0% { content: "ចុចដើម្បបើកធៀបអេឡិចត្រូនិច!"; }
+
+    /* --- DELETING PHASE (57% to 95%) --- */
+    58.3% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិច"; }
+    59.6% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូនិ"; }
+    60.9% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូន"; }
+    62.2% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រូ"; }
+    63.5% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្រ"; }
+    64.8% { content: "ចុចដើម្បីបើកធៀបអេឡិចត្"; }
+    66.1% { content: "ចុចដើម្បីបើកធៀបអេឡិចត"; }
+    67.4% { content: "ចុចដើម្បីបើកធៀបអេឡិច"; }
+    68.7% { content: "ចុចដើម្បីបើកធៀបអេឡិ"; }
+    70.0% { content: "ចុចដើម្បីបើកធៀបអេឡ"; }
+    71.3% { content: "ចុចដើម្បីបើកធៀបអេ"; }
+    72.6% { content: "ចុចដើម្បីបើកធៀបអ"; }
+    73.9% { content: "ចុចដើម្បីបើកធៀប"; }
+    75.2% { content: "ចុចដើម្បីបើកធៀ"; }
+    76.5% { content: "ចុចដើម្បីបើកធ"; }
+    77.8% { content: "ចុចដើម្បីបើក"; }
+    79.1% { content: "ចុចដើម្បីបើ"; }
+    80.4% { content: "ចុចដើម្បីប"; }
+    81.7% { content: "ចុចដើម្បី"; }
+    83.0% { content: "ចុចដើម្ប"; }
+    84.3% { content: "ចុចដើម្"; }
+    85.6% { content: "ចុចដើម"; }
+    86.9% { content: "ចុចដើ"; }
+    88.2% { content: "ចុចដ"; }
+    89.5% { content: "ចុច"; }
+    90.8% { content: "ចុ"; }
+    92.1% { content: "ច"; }
+    95.0% { content: ""; }
+
+    /* --- FINAL DELAY PHASE (5% of 10s = 0.5s) --- */
+    95.0%, 100% { content: ""; }
+}
+
+.typewriter::before {
+    content: "";
+    animation: typing 8s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.typewriter {
+    --caret: currentcolor;
+}
+
+.typewriter::after {
+    content: "";
+    border-right: 2px solid var(--caret);
+    animation: blink 0.5s linear infinite;
+}

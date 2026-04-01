@@ -1,0 +1,62 @@
+.melting-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    animation: melt 3s infinite ease-in-out;
+    background: linear-gradient(90deg, #7d2ae8, #ff44e0, #7d2ae8);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.melting-text::before,
+.melting-text::after {
+    content: var(--dynamic-content, 'លោក ~ យឺម ឃ្លោក');
+    /* content: 'លោក ~ ម៉ៅ ណុចត្រា'; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #7d2ae8, #ff44e0, #7d2ae8);
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: -1;
+    transform: scaleY(1);
+    opacity: 0.5;
+    animation: drip 3s infinite ease-in-out;
+}
+
+.melting-text::after {
+    filter: blur(10px);
+    opacity: 0.3;
+}
+
+/* Keyframes for melting effect */
+@keyframes melt {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes drip {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleY(1.1);
+        opacity: 0.7;
+    }
+}
