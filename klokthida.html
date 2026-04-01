@@ -13,13 +13,12 @@
         }
 
         body {
-            min-height: 100vh;
             background: linear-gradient(145deg, #f9f3e6 0%, #ffe6c9 100%);
             font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, -apple-system, 'Khmer OS', 'Moulpali', 'Noto Sans Khmer', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            overflow: hidden;
         }
 
         .greeting-card {
@@ -151,10 +150,23 @@
                 font-size: 1.9rem;
             }
         }
+
+        /* .container {
+            width: 100%;
+            max-width: 430px;
+            height: 100dvh;
+            background-color: red !important;
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        } */
     </style>
 </head>
 
 <body>
+
+    <div class="container">
+
+    </div>
 
     <div class="greeting-card">
         <div class="greeting-icon">✨🌾</div>
