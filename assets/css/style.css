@@ -109,6 +109,7 @@ body {
 }
 
 .invite-title {
+    margin-bottom: 0.5rem;
     /* 0.8 opacity version of #7d2ae8 */
     color: rgba(125, 42, 232, 0.8);
 }

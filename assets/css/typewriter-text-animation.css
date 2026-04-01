@@ -1,5 +1,5 @@
 .typewriter-container {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -99,6 +99,6 @@
 
 .typewriter::after {
     content: "";
-    border-right: 2px solid var(--caret);
+    border-right: 1px solid var(--caret);
     animation: blink 0.5s linear infinite;
 }
