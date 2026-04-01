@@ -32,8 +32,8 @@
                 button.classList.remove('animate');
                 // Optional: add navigation logic here if "opening" the card
             }, 600);
+            alert('Pedding informations');
         });
     }
-
-    console.log(`[Invitation] Greeting set for: ${displayName}`);
+    
 })();
