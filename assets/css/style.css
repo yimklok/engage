@@ -152,5 +152,6 @@ body {
 }
 
 .engagement-container .content .btn-content .open-btn i {
-    margin-bottom: 7px;
+    font-size: 16px;
+    margin-bottom: 4px;
 }
