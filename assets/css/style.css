@@ -78,7 +78,8 @@ body {
     transform: translateX(-50%);
     width: 100%;
     max-width: 480px;
-    height: 100dvh; 
+    min-height: 100dvh; 
+    max-height: 100dvh; 
     object-fit: cover;
     object-position: bottom;
     z-index: -1;
