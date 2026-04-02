@@ -198,15 +198,15 @@ body {
 }
 
 .engagement-container .parents-section, .engagement-container .fiance-section {
-    padding: 0 1rem;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
     color: rgba(125, 42, 232, 0.9);
 }
 
 .parents-section .name {
+    font-size: 15px;
     text-align: start;
 }
 
@@ -215,6 +215,6 @@ body {
 }
 
 .engagement-container .location-address {
-    padding: 0 1rem;
+    font-size: 1rem;
     color: rgba(125, 42, 232, 0.8);
 }
