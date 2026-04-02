@@ -32,7 +32,6 @@
                 button.classList.remove('animate');
                 // Optional: add navigation logic here if "opening" the card
             }, 600);
-            window.alert('Pedding informations');
         });
     }
 
