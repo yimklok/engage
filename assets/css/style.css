@@ -78,7 +78,7 @@ body {
     transform: translateX(-50%);
     width: 100%;
     max-width: 480px;
-    height: 100vh; 
+    height: 100dvh; 
     object-fit: cover;
     object-position: bottom;
     z-index: -1;
@@ -108,7 +108,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .engagement-container .content .engagement-title {
