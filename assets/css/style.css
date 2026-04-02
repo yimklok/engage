@@ -66,8 +66,8 @@ html::-webkit-scrollbar-thumb {
 
 body {
     height: 100dvh;
-    min-height: 100dvh; 
-    max-height: 100dvh; 
+    min-height: 100dvh;
+    max-height: 100dvh;
     background: url('../images/engagement-invitation-body.png') repeat;
     background-size: 250px;
     overflow: auto;
@@ -84,6 +84,38 @@ body {
     object-fit: cover;
     object-position: bottom;
     z-index: -1;
+}
+
+.engagement-bg-top {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-180deg);
+    width: 100%;
+    max-width: 480px;
+    object-fit: cover;
+    object-position: top;
+    z-index: -1;
+}
+
+.engagement-bg-bottom {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    object-fit: cover;
+    object-position: bottom;
+    z-index: -1;
+}
+
+.engagement-bg-section.bg-hide {
+    display: none;
+}
+
+.engagement-bg-section.bg-show {
+    display: block;
 }
 
 .engagement-content-section {

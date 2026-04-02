@@ -23,11 +23,16 @@
         meltingElement.style.setProperty('--dynamic-content', `"${displayName}"`);
     }
 
+    // Find bg
+    const bg = document.querySelectorAll('.engagement-bg-section');
+
     // 5. Button Animation Logic
     if (button) {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             button.classList.add('animate');
+            bg[0].classList.add('bg-hide');
+            bg[1].classList.remove('bg-hide');
             setTimeout(() => {
                 button.classList.remove('animate');
                 // Optional: add navigation logic here if "opening" the card
