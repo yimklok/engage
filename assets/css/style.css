@@ -72,8 +72,6 @@ body {
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
-    background: url('../images/engagement-invitation-body.png') repeat;
-    background-size: 250px;
     overflow: auto;
 }
 
