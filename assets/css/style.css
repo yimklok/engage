@@ -147,6 +147,7 @@ body {
 }
 
 .engagement-container .content {
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -194,4 +195,26 @@ body {
 .engagement-container .content .btn-content .open-btn i {
     font-size: 16px;
     margin-bottom: 4px;
+}
+
+.engagement-container .parents-section, .engagement-container .fiance-section {
+    padding: 0 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    color: rgba(125, 42, 232, 0.9);
+}
+
+.parents-section .name {
+    text-align: start;
+}
+
+.fiance-section .name {
+    text-align: center;
+}
+
+.engagement-container .location-address {
+    padding: 0 1rem;
+    color: rgba(125, 42, 232, 0.8);
 }
