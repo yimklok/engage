@@ -33,7 +33,6 @@
             e.preventDefault();
             // 1. Show the frame and the "show" background
             if (frame) frame.classList.remove('hide');
-            button.classList.add('animate');
             bg[1].classList.remove('hide');
             // 2. Hide the old, show the new
             engagementContainer.classList.add('hide');
@@ -49,9 +48,6 @@
                 AOS.init(); // Re-scan the whole DOM
                 AOS.refresh();
             }, 50);
-            setTimeout(() => {
-                button.classList.remove('animate');
-            }, 600);
         });
     }
 
