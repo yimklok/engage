@@ -234,3 +234,10 @@ body {
     font-size: 1rem;
     color: rgba(125, 42, 232, 0.8);
 }
+
+.engagement-container .content .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
