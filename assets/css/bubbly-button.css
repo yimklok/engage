@@ -58,7 +58,7 @@
         40% 90%,
         55% 90%,
         70% 90%;
-    animation: topBubbles 0.8s ease-in-out infinite;
+    animation: topBubbles 1s ease-in-out infinite;
 }
 
 @keyframes topBubbles {
@@ -104,7 +104,7 @@
         85% 0%,
         70% 0%,
         70% 0%;
-    animation: bottomBubbles 0.8s ease-in-out infinite;
+    animation: bottomBubbles 1s ease-in-out infinite;
 }
 
 @keyframes bottomBubbles {
