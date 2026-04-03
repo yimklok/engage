@@ -241,3 +241,152 @@ body {
     justify-content: center;
     gap: 1rem;
 }
+
+.engagement-container .content .thank-content {
+    color: #7d2ae8;
+    padding-bottom: 3rem;
+}
+
+.engagement-container .content .map-content a {
+    display: block;
+    margin-top: -1rem;
+}
+
+.engagement-container .content .map-content span {
+    display: block;
+    margin-top: -2rem;
+    font-size: 13px;
+    font-weight: 300;
+    color: #7d2ae8;
+}
+.engagement-container .content .map-content a img {
+    width: 200px;
+    height: 200px;
+}
+
+.detail-content {
+    margin: 0 auto;
+}
+
+.tree {
+    max-width: 350px;
+    --border-size: 1px;
+    --border-color: #7d2ae8;
+    --spacing-line-vertical: 0.15em;
+    --radius: 6px;
+    --icon-size: 1em;
+    text-align: start;
+}
+
+.tree,
+.tree ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tree li,
+.tree summary {
+    line-height: 1.1;
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 0.95rem;
+}
+
+.tree li {
+    padding: var(--spacing-line-vertical) 0;
+}
+
+.tree ul {
+    padding-top: 0;
+    padding-left: 0;
+}
+
+/* The vertical line for nested items */
+.tree ul li {
+    border-left: var(--border-size) solid var(--border-color);
+    display: flex;
+    align-items: center;
+    margin-left: 0.15em;
+}
+
+.tree ul li:last-child {
+    border-color: transparent;
+}
+
+.tree ul li::before {
+    content: "";
+    order: -2;
+    display: block;
+    align-self: flex-start;
+    flex: 0 0 1.1em;
+    width: 1.1em;
+    height: 24px;
+    border: solid var(--border-color);
+    border-width: 0 0 var(--border-size) var(--border-size);
+    position: relative;
+    top: -0.4em;
+    left: calc(var(--border-size) * -1);
+}
+
+.tree ul li:last-child::before {
+    border-bottom-left-radius: 0.4em;
+}
+
+.tree summary {
+    color: #7d2ae8;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.tree summary:focus {
+    outline: none;
+}
+
+.tree summary:focus-visible {
+    outline: 1px dotted #000;
+}
+
+.tree li:not(:has(summary))::after,
+.tree summary::before {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: -1;
+    flex: 0 0 var(--icon-size);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 50%;
+    background: var(--border-color);
+    margin-right: 0.35em;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: -0.25em;
+}
+
+.tree summary::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 448 512'%3E%3Cpath d='M416 256c0 17.7-14.3 32-32 32L32 288c-17.7 0-32 14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z'/%3E%3C/svg%3E");
+    z-index: 1;
+}
+
+.tree ul li ul li::before {
+    height: 30px;
+}
+
+.tree ul li ul li::after {
+    display: none;
+}
+
+.info {
+    padding: 6px;
+    margin-top: 6px;
+    margin-left: -2px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+.info p {
+    line-height: 1.6;
+}
