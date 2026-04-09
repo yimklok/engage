@@ -142,6 +142,9 @@ body {
     transform: translateX(-50%) scale(1);
 }
 
+/* ---------------------------------------------------------
+   1. Engagement Section Styling
+--------------------------------------------------------- */
 .engagement-content-section {
     padding: 20px;
     width: 100%;
@@ -149,6 +152,7 @@ body {
     margin: 0 auto;
 }
 
+/* Landing Container */
 .engagement-container {
     border-radius: 1rem;
     background-size: cover;
@@ -157,7 +161,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 4rem;
+    padding: 20px 10px;
+    perspective: 1000px;
     padding-bottom: 5rem;
 }
 
@@ -188,8 +193,256 @@ body {
     align-items: center;
 }
 
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 40px 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Header Ornament */
+.ornament-top {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Logo Animation */
+.logo-circle-wrap {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 5px 15px rgba(125, 42, 232, 0.2));
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--primary-light);
+    border-radius: 50%;
+    animation: ringPulse 2s infinite;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Button & Typewriter Styling */
+.open-btn {
+    padding: 12px 30px !important;
+    background: linear-gradient(45deg, var(--primary), #9d50bb) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    box-shadow: 0 10px 20px rgba(125, 42, 232, 0.3) !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-icon-circle {
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter-box {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.typewriter-container {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 !important;
+}
+
 /* ---------------------------------------------------------
-   9. Invitation Section Styling
+   1. PARENT
+--------------------------------------------------------- */
+.parents-container {
+    margin-bottom: 2rem;
+}
+
+.parents-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(125, 42, 232, 0.03);
+    border-radius: 15px;
+}
+
+.parent-column {
+    flex: 1;
+    text-align: center;
+}
+
+.side-label {
+    font-size: 0.75rem;
+    color: #d4af37;
+    margin-bottom: 8px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.name-item {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.name-item .moul-regular {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(212, 175, 55, 0.3);
+    align-self: center;
+}
+
+/* ---------------------------------------------------------
+   2. COUPLE 
+--------------------------------------------------------- */
+.couple-section {
+    padding: 20px 0;
+    margin: 10px 0;
+    position: relative;
+}
+
+.fiance-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    margin-bottom: 10px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.couple-names-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.side-name {
+    flex: 1;
+}
+
+.partner-name {
+    color: var(--primary);
+    font-size: 1.3rem !important;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(125, 42, 232, 0.1);
+}
+
+/* The Romantic Connector */
+.couple-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.couple-connector .line {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+}
+
+.couple-connector .line:last-child {
+    background: linear-gradient(to top, transparent, var(--gold));
+}
+
+.heart-icon {
+    position: relative;
+    margin: 10px 0;
+    color: #b30000;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.connector-text {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+/* Smooth Heartbeat Animation */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* Adjustments for mobile to ensure names don't break awkwardly */
+@media (max-width: 400px) {
+    .partner-name {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   3. INVITATION
 --------------------------------------------------------- */
 .invitation-wrap {
     padding: 14px;
@@ -311,7 +564,7 @@ body {
 }
 
 /* ---------------------------------------------------------
-   10. Program Section Styling
+   4. PROGRAM
 --------------------------------------------------------- */
 /* Program Section Styling */
 .program-section {
@@ -393,7 +646,7 @@ body {
 }
 
 /* ---------------------------------------------------------
-   11. COUNTDOWN TIMER
+   5. COUNTDOWN TIMER
 --------------------------------------------------------- */
 .countdown {
     display: flex;
@@ -455,162 +708,8 @@ body {
 }
 
 /* ---------------------------------------------------------
-   12. FOOTER & THANKS
+   6. FOOTER & THANKS
 --------------------------------------------------------- */
-.thanks-msg {
-    margin-top: 5px;
-    color: var(--gold);
-    padding-bottom: 3rem;
-}
-
-/* Parents Section Styling */
-.parents-container {
-    margin-bottom: 2rem;
-}
-
-.parents-grid {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 15px;
-    padding: 15px;
-    background: rgba(125, 42, 232, 0.03);
-    border-radius: 15px;
-}
-
-.parent-column {
-    flex: 1;
-    text-align: center;
-}
-
-.side-label {
-    font-size: 0.75rem;
-    color: #d4af37;
-    margin-bottom: 8px;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
-.name-item {
-    margin-bottom: 5px;
-    line-height: 1.4;
-}
-
-.name-item .moul-regular {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--primary);
-}
-
-.vertical-divider {
-    width: 1px;
-    height: 60px;
-    background: rgba(212, 175, 55, 0.3);
-    align-self: center;
-}
-
-
-/* Couple Section Styling */
-.couple-section {
-    padding: 20px 0;
-    margin: 10px 0;
-    position: relative;
-}
-
-.fiance-labels {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    margin-bottom: 10px;
-    color: var(--gold);
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
-
-.couple-names-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.side-name {
-    flex: 1;
-}
-
-.partner-name {
-    color: var(--primary);
-    font-size: 1.3rem !important;
-    line-height: 1.5;
-    text-shadow: 2px 2px 4px rgba(125, 42, 232, 0.1);
-}
-
-/* The Romantic Connector */
-.couple-connector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 60px;
-}
-
-.couple-connector .line {
-    width: 1px;
-    height: 30px;
-    background: linear-gradient(to bottom, transparent, var(--gold));
-}
-
-.couple-connector .line:last-child {
-    background: linear-gradient(to top, transparent, var(--gold));
-}
-
-.heart-icon {
-    position: relative;
-    margin: 10px 0;
-    color: #b30000;
-    animation: heartBeat 1.5s ease-in-out infinite;
-}
-
-.connector-text {
-    display: block;
-    font-size: 0.7rem;
-    color: #888;
-    margin-top: 5px;
-    white-space: nowrap;
-}
-
-/* Smooth Heartbeat Animation */
-@keyframes heartBeat {
-    0% {
-        transform: scale(1);
-    }
-
-    15% {
-        transform: scale(1.2);
-    }
-
-    30% {
-        transform: scale(1);
-    }
-
-    45% {
-        transform: scale(1.1);
-    }
-
-    60% {
-        transform: scale(1);
-    }
-}
-
-/* Adjustments for mobile to ensure names don't break awkwardly */
-@media (max-width: 400px) {
-    .partner-name {
-        font-size: 1.1rem !important;
-    }
-}
-
-
 /* Final Thanks Section */
 .thanks-wrapper {
     margin-top: 40px;
@@ -649,135 +748,4 @@ body {
     margin-bottom: 10px;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(125, 42, 232, 0.2);
-}
-
-.gratitude-text {
-    color: #666;
-    font-size: 0.85rem;
-    max-width: 280px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.footer-decoration {
-    margin-top: 30px;
-}
-
-.mini-logo {
-    width: 40px;
-    height: auto;
-    filter: grayscale(100%);
-    opacity: 0.3;
-    transition: all 0.5s ease;
-}
-
-.thanks-wrapper:hover .mini-logo {
-    filter: grayscale(0%);
-    opacity: 0.8;
-}
-
-
-
-/* Landing Container */
-.engagement-container {
-    padding: 20px 10px;
-    perspective: 1000px;
-}
-
-/* Glassmorphism Card */
-.glass-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 30px;
-    padding: 40px 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-}
-
-/* Header Ornament */
-.ornament-top {
-    color: var(--gold);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-/* Logo Animation */
-.logo-circle-wrap {
-    position: relative;
-    width: 130px;
-    height: 130px;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main-logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: 2;
-    filter: drop-shadow(0 5px 15px rgba(125, 42, 232, 0.2));
-}
-
-.pulse-ring {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--primary-light);
-    border-radius: 50%;
-    animation: ringPulse 2s infinite;
-}
-
-@keyframes ringPulse {
-    0% {
-        transform: scale(0.8);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* Button & Typewriter Styling */
-.open-btn {
-    padding: 12px 30px !important;
-    background: linear-gradient(45deg, var(--primary), #9d50bb) !important;
-    border: none !important;
-    border-radius: 50px !important;
-    color: white !important;
-    font-size: 1.1rem !important;
-    box-shadow: 0 10px 20px rgba(125, 42, 232, 0.3) !important;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.btn-icon-circle {
-    background: rgba(255, 255, 255, 0.2);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.typewriter-box {
-    margin-top: 15px;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 5px 15px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-.typewriter-container {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0 !important;
 }
