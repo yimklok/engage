@@ -272,30 +272,6 @@ body {
     font-size: 1rem;
 }
 
-.engagement-container .content .map-content a {
-    display: block;
-    margin-top: -1rem;
-}
-
-.engagement-container .content .map-content span {
-    display: block;
-    margin-top: -3rem;
-    font-size: 0.7rem;
-    font-weight: 300;
-    color: #7d2ae8;
-}
-
-.map-content img {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-    max-width: 150px;
-    border-radius: 25px;
-    border: 5px solid white;
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 10px;
-}
-
 .detail-content {
     margin: 0 auto;
 }
@@ -424,11 +400,11 @@ body {
 }
 
 .invitation-wrap {
-    padding: 15px;
+    padding: 14px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+    border-radius: 16px;
     border: 1px solid rgba(212, 175, 55, 0.3);
-    margin: 15px 0;
+    margin: 14px 0;
 }
 
 .decoration {
@@ -457,8 +433,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin: 30px 0;
-    padding: 10px;
+    margin: 20px 0;
+    padding: 10px 0;
     border-top: 1px dashed #ccc;
     border-bottom: 1px dashed #ccc;
 }
@@ -466,19 +442,24 @@ body {
 .date-box {
     background: #b30000;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 12px;
     border-radius: 10px;
     text-align: center;
-    min-width: 100px;
+    min-width: 82px;
 }
 
 .date-box .day {
     font-size: 2rem;
-    line-height: 1;
+    line-height: 0.9;
 }
 
 .date-box .month {
     font-size: 1rem;
+}
+
+.date-box .year {
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .time-details {
@@ -486,9 +467,13 @@ body {
     line-height: 1.6;
 }
 
+.time-details .lunar-date {
+    margin-top: 0.4rem;
+}
+
 .time-highlight {
     color: #b30000;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 5px;
 }
 
@@ -509,12 +494,111 @@ body {
     font-style: italic;
 }
 
-.thanks-msg {
-    margin-top: 5px;
-    color: #d4af37;
-    padding-bottom: 3rem;
+.map-content a {
+    display: block;
+    margin-bottom: 1rem;
 }
 
+.map-content span {
+    display: block;
+    margin-top: -3rem;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #7d2ae8;
+}
+
+.map-content img {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 25px;
+    border: 5px solid white;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------------------------------
+   10. Program Section Styling
+--------------------------------------------------------- */
+/* Program Section Styling */
+.program-section {
+    background: rgba(255, 255, 255, 0.4) !important;
+    /* Slightly more visible */
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.session-title {
+    color: #b30000;
+    font-size: 1.1rem;
+    margin: 20px 0 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* The Vertical Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+/* The Dot on the timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -17px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: #b30000;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item .time {
+    font-weight: bold;
+    color: #b30000;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.timeline-item .event-desc {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Highlight specific important events */
+.highlight-gold {
+    color: #8a6d00 !important;
+    font-weight: 600;
+}
+
+/* Icon colors */
+.session-title i {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
 
 /* ---------------------------------------------------------
    11. COUNTDOWN TIMER
@@ -550,10 +634,357 @@ body {
 /* ---------------------------------------------------------
    12. FOOTER & THANKS
 --------------------------------------------------------- */
-.thank-content {
-    font-family: "Dangrek", sans-serif;
+.thanks-msg {
+    margin-top: 5px;
+    color: var(--gold);
+    padding-bottom: 3rem;
+}
+
+/* Parents Section Styling */
+.parents-container {
+    margin-bottom: 2rem;
+}
+
+.parents-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(125, 42, 232, 0.03);
+    border-radius: 15px;
+}
+
+.parent-column {
+    flex: 1;
+    text-align: center;
+}
+
+.side-label {
+    font-size: 0.75rem;
+    color: #d4af37;
+    margin-bottom: 8px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.name-item {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.name-item .moul-regular {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(212, 175, 55, 0.3);
+    align-self: center;
+}
+
+/* Countdown Section Styling */
+.countdown-box {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4)) !important;
+}
+
+.countdown .item {
+    background: white !important;
+    border: 1px solid rgba(125, 42, 232, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    min-width: 60px !important;
+}
+
+.countdown .item p {
+    background: linear-gradient(45deg, #b30000, #7d2ae8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.countdown .separator {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-width: 10px !important;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    font-size: 1.2rem;
+    padding-bottom: 15px !important;
+}
+
+/* Couple Section Styling */
+.couple-section {
+    padding: 20px 0;
+    margin: 10px 0;
+    position: relative;
+}
+
+.fiance-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    margin-bottom: 10px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.couple-names-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.side-name {
+    flex: 1;
+}
+
+.partner-name {
+    color: var(--primary);
+    font-size: 1.3rem !important;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(125, 42, 232, 0.1);
+}
+
+/* The Romantic Connector */
+.couple-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.couple-connector .line {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+}
+
+.couple-connector .line:last-child {
+    background: linear-gradient(to top, transparent, var(--gold));
+}
+
+.heart-icon {
+    position: relative;
+    margin: 10px 0;
+    color: #b30000;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.connector-text {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+/* Smooth Heartbeat Animation */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* Adjustments for mobile to ensure names don't break awkwardly */
+@media (max-width: 400px) {
+    .partner-name {
+        font-size: 1.1rem !important;
+    }
+}
+
+
+/* Final Thanks Section */
+.thanks-wrapper {
+    margin-top: 40px;
+    padding-bottom: 60px;
+    /* Space at the bottom so it's not cut off */
+    text-align: center;
+}
+
+.divider-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+.divider-ornament .line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to var(--direction, right), transparent, var(--gold));
+}
+
+.divider-ornament .line:last-child {
+    --direction: left;
+}
+
+.divider-ornament i {
+    color: var(--gold);
+    font-size: 0.8rem;
+}
+
+.thanks-msg {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(125, 42, 232, 0.2);
+}
+
+.gratitude-text {
+    color: #666;
+    font-size: 0.85rem;
+    max-width: 280px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.footer-decoration {
+    margin-top: 30px;
+}
+
+.mini-logo {
+    width: 40px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transition: all 0.5s ease;
+}
+
+.thanks-wrapper:hover .mini-logo {
+    filter: grayscale(0%);
+    opacity: 0.8;
+}
+
+
+
+/* Landing Container */
+.engagement-container {
+    padding: 20px;
+    perspective: 1000px;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 40px 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Header Ornament */
+.ornament-top {
     color: var(--gold);
     font-size: 1.2rem;
-    padding-bottom: 3rem;
-    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+}
+
+/* Logo Animation */
+.logo-circle-wrap {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 5px 15px rgba(125, 42, 232, 0.2));
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--primary-light);
+    border-radius: 50%;
+    animation: ringPulse 2s infinite;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Button & Typewriter Styling */
+.open-btn {
+    padding: 12px 30px !important;
+    background: linear-gradient(45deg, var(--primary), #9d50bb) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    box-shadow: 0 10px 20px rgba(125, 42, 232, 0.3) !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-icon-circle {
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter-box {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.typewriter-container {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 !important;
 }

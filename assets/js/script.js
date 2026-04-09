@@ -53,189 +53,51 @@
 
     // 6. Countdown Timer for 23/05/2026 with Seconds
     function initCountdown() {
-        // Target date: 23 May 2026 at 00:00:00
-        // Note: Month is 0-indexed in JavaScript (4 = May)
-        const targetDate = new Date(2026, 4, 23, 0, 0, 0);
+        // Target date: 23 May 2026 at 04:00 PM (16:00:00)
+        // Note: Month is 0-indexed (4 = May)
+        const targetDate = new Date(2026, 4, 23, 16, 0, 0).getTime();
 
-        // Get countdown elements - targeting the first <p> in each .item
-        const items = document.querySelectorAll('.countdown .item');
-
-        let daysElement = null;
-        let hoursElement = null;
-        let minutesElement = null;
-        let secondsElement = null;
-
-        if (items.length >= 4) {
-            daysElement = items[0].querySelector('p:first-child');
-            hoursElement = items[1].querySelector('p:first-child');
-            minutesElement = items[2].querySelector('p:first-child');
-            secondsElement = items[3].querySelector('p:first-child');
-        }
+        // Select elements directly by ID
+        const daysVal = document.getElementById('days');
+        const hoursVal = document.getElementById('hours');
+        const minutesVal = document.getElementById('minutes');
+        const secondsVal = document.getElementById('seconds');
 
         function updateCountdown() {
-            const now = new Date();
-            const timeRemaining = targetDate - now;
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
-            // If the target date has passed
-            if (timeRemaining < 0) {
-                if (daysElement) daysElement.textContent = '00';
-                if (hoursElement) hoursElement.textContent = '00';
-                if (minutesElement) minutesElement.textContent = '00';
-                if (secondsElement) secondsElement.textContent = '00';
+            // If the date has passed
+            if (distance < 0) {
+                [daysVal, hoursVal, minutesVal, secondsVal].forEach(el => {
+                    if (el) el.textContent = "00";
+                });
                 return;
             }
 
-            // Calculate days, hours, minutes, seconds
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Update the DOM with leading zeros
-            if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
-            if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
-            if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
-            if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
+            // Update DOM with leading zeros
+            if (daysVal) daysVal.textContent = String(days).padStart(2, '0');
+            if (hoursVal) hoursVal.textContent = String(hours).padStart(2, '0');
+            if (minutesVal) minutesVal.textContent = String(minutes).padStart(2, '0');
+            if (secondsVal) secondsVal.textContent = String(seconds).padStart(2, '0');
         }
 
-        // Initial update
+        // Run immediately and then every second
         updateCountdown();
-
-        // Update every second (1000 ms) for smooth seconds display
         setInterval(updateCountdown, 1000);
     }
 
-    // Initialize countdown when DOM is ready
+    // Initialize
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initCountdown);
     } else {
         initCountdown();
     }
-
-    const bars = [
-        ['end', 'top'],
-        ['side', 'top', 'left'],
-        ['side', 'top', 'right'],
-        ['middle'],
-        ['side', 'bottom', 'left'],
-        ['side', 'bottom', 'right'],
-        ['end', 'bottom']
-    ];
-
-    const $main = document.querySelector('main');
-
-    const addDigits = number => {
-        const initGroup = (number, padding = 2) => {
-            const $group = document.createElement('div');
-            $group.classList.add('group');
-
-            const digits = [...`${number}`.padStart(padding, 0)].map(digit => {
-                const $digit = document.createElement('figure');
-                $digit.classList.add('digit');
-                $digit.setAttribute('data-digit', digit);
-                bars.forEach(classes => {
-                    const $span = document.createElement('span');
-                    $span.classList.add(...classes);
-                    $digit.append($span);
-                });
-                return $digit;
-            });
-
-            $group.append(...digits);
-
-            return {
-                element: $group,
-                set number(val) {
-                    number = val;
-                    [...`${number}`.padStart(padding, 0).substring(`${number}`.length - 2)].forEach((digit, i) => {
-                        digits[i].setAttribute('data-digit', digit);
-                    });
-                },
-
-                get number() {
-                    return number;
-                }
-            }
-        }
-
-        const $digits = document.createElement('div');
-        $digits.classList.add('digits');
-        const group = initGroup(number);
-        const groupShadow1 = initGroup(number);
-        const groupShadow2 = initGroup(number);
-        groupShadow1.element.classList.add('shadow');
-        groupShadow1.element.classList.add('shadow1');
-        groupShadow2.element.classList.add('shadow');
-        groupShadow2.element.classList.add('shadow2');
-        $digits.append(group.element);
-        $digits.append(groupShadow1.element);
-        $digits.append(groupShadow2.element);
-        $main.append($digits);
-
-        return {
-            set number(val) {
-                number = val;
-                group.number = val;
-                groupShadow1.number = val;
-                groupShadow2.number = val;
-            },
-            get number() {
-                return number;
-            }
-        }
-    }
-
-    const addColon = () => {
-        const $colonGroup = document.createElement('div');
-        $colonGroup.classList.add('colon-group');
-        const $colon = document.createElement('figure');
-        $colon.append(document.createElement('span'));
-        const $colonShadow1 = document.createElement('figure');
-        $colonShadow1.append(document.createElement('span'));
-        const $colonShadow2 = document.createElement('figure');
-        $colonShadow2.append(document.createElement('span'));
-        $colon.classList.add('colon');
-        $colonShadow1.classList.add('colon', 'shadow', 'shadow1');
-        $colonShadow2.classList.add('colon', 'shadow', 'shadow2');
-        $colonGroup.append($colon);
-        $colonGroup.append($colonShadow1);
-        $colonGroup.append($colonShadow2);
-        $main.append($colonGroup);
-    }
-
-    const init = () => {
-        let now = new Date();
-        let hours = now.getHours();
-        let minutes = now.getMinutes();
-        let seconds = now.getSeconds();
-
-        const numberHour = addDigits(hours);
-        addColon();
-        const numberMinute = addDigits(minutes);
-        addColon();
-        const numberSecond = addDigits(seconds);
-
-        const update = () => {
-            now = new Date();
-            let newSeconds = now.getSeconds();
-            if (seconds !== newSeconds) {
-                hours = now.getHours();
-                minutes = now.getMinutes();
-                seconds = newSeconds;
-                numberHour.number = hours;
-                numberMinute.number = minutes;
-                numberSecond.number = seconds;
-            }
-
-            requestAnimationFrame(update);
-        }
-        update();
-    }
-
-    if (/^(?:(?!chrome|android)[\s\S])*(?:safari|iPad|iPhone|iPod)/i.test(navigator.userAgent)) {
-        document.body.classList.add('safari');
-    }
-
-    init();
 
 })();
