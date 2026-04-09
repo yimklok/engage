@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Moul&family=Moulpali&family=Preahvihear&family=Siemreap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bokor&family=Dangrek&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Moul&family=Moulpali&family=Preahvihear&family=Siemreap&display=swap');
 @import url("bubbly-button.css");
 @import url("typewriter-effect.css");
 @import url("typewriter-text-animation.css");
@@ -55,6 +55,12 @@
     font-style: normal;
 }
 
+.bokor-regular {
+    font-family: "Bokor", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
 html::-webkit-scrollbar {
     width: 0;
 }
@@ -74,7 +80,6 @@ body {
     min-height: 100dvh;
     max-height: 100dvh;
     overflow: auto;
-    text-shadow: 1px 1px rgba(93, 32, 174, 0.2);
 }
 
 .engagement-bg-section {
@@ -233,11 +238,11 @@ body {
 
 .fiance-section .partner-name {
     color: #7d2ae8;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     font-weight: 600;
     text-align: center;
-    /* text-shadow: 1px 1px rgba(93, 32, 174, 0.5); */
+    text-shadow: 1px 1px rgba(93, 32, 174, 0.1);
 }
 
 .engagement-container .content .partner {
@@ -248,6 +253,12 @@ body {
 .engagement-container .location-address {
     font-size: 1rem;
     color: rgba(125, 42, 232, 0.8);
+}
+
+.engagement-container .location-address span {
+    font-family: "Moul", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .engagement-container .content .countdown {
@@ -305,6 +316,7 @@ body {
     --radius: 6px;
     --icon-size: 1em;
     text-align: start;
+    color: #7d2ae8;
 }
 
 .tree,
