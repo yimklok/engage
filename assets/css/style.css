@@ -4,6 +4,13 @@
 @import url("typewriter-text-animation.css");
 @import url("melting-text.css");
 
+:root {
+    --primary: #7d2ae8;
+    --primary-light: rgba(125, 42, 232, 0.1);
+    --gold: #d4af37;
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +23,10 @@
 
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .moulpali-regular {
@@ -255,35 +266,10 @@ body {
     color: rgba(125, 42, 232, 0.8);
 }
 
-.engagement-container .location-address span {
+.location-address span {
     font-family: "Moul", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.engagement-container .content .countdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.countdown .item {
-    color: #7d2ae8;
-    min-width: 52px;
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: rgba(125, 42, 232, 0.05);
-}
-
-.countdown .item p {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.engagement-container .content .thank-content {
-    color: #7d2ae8;
-    padding-bottom: 3rem;
+    color: var(--primary);
+    font-size: 1rem;
 }
 
 .engagement-container .content .map-content a {
@@ -293,15 +279,20 @@ body {
 
 .engagement-container .content .map-content span {
     display: block;
-    margin-top: -2rem;
-    font-size: 13px;
+    margin-top: -3rem;
+    font-size: 0.7rem;
     font-weight: 300;
     color: #7d2ae8;
 }
 
-.engagement-container .content .map-content a img {
-    width: 200px;
-    height: 200px;
+.map-content img {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 25px;
+    border: 5px solid white;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 10px;
 }
 
 .detail-content {
@@ -422,13 +413,145 @@ body {
 }
 
 .info {
-    padding: 6px;
-    margin-top: 6px;
-    margin-left: -2px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.8;
 }
 
-.info p {
+.invitation-wrap {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    margin: 20px 0;
+}
+
+.decoration {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #d4af37;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.main-invitation-text {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.event-highlight h2 {
+    color: #b30000;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.date-time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+    padding: 15px;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+
+.date-box {
+    background: #b30000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.date-box .day {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.date-box .month {
+    font-size: 1rem;
+}
+
+.time-details {
+    text-align: left;
     line-height: 1.6;
+}
+
+.time-highlight {
+    color: #b30000;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.location-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.icon-map {
+    font-size: 1.5rem;
+}
+
+.address {
+    color: #333;
+    font-style: italic;
+}
+
+.thanks-msg {
+    margin-top: 25px;
+    color: #d4af37;
+}
+
+
+/* ---------------------------------------------------------
+   11. COUNTDOWN TIMER
+--------------------------------------------------------- */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.countdown .item {
+    background: white;
+    border: 1px solid var(--primary-light);
+    border-radius: 15px;
+    min-width: 65px;
+    padding: 10px 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.countdown .item p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.countdown .item span {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   12. FOOTER & THANKS
+--------------------------------------------------------- */
+.thank-content {
+    font-family: "Dangrek", sans-serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    padding-bottom: 3rem;
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.1);
 }
