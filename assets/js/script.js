@@ -54,8 +54,10 @@
     // 6. Countdown Timer for 23/05/2026 with Seconds
     function initCountdown() {
         // Target date: 23 May 2026 at 04:00 PM (16:00:00)
+        // Target date: 23 May 2026 at 00:00 PM (00:00:00)
         // Note: Month is 0-indexed (4 = May)
-        const targetDate = new Date(2026, 4, 23, 16, 0, 0).getTime();
+        // const targetDate = new Date(2026, 4, 23, 16, 0, 0).getTime();
+        const targetDate = new Date(2026, 4, 23, 0, 0, 0).getTime();
 
         // Select elements directly by ID
         const daysVal = document.getElementById('days');
